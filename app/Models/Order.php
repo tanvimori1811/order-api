@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    //
+    protected $fillable = [
+        'status',
+    ];
+
+    public function histories()
+    {
+        return $this->hasMany(OrderStatusHistory::class);
+    }
 }
